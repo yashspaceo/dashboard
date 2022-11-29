@@ -13,7 +13,7 @@ class HomeController extends GetxController {
   void onInit() {
     super.onInit();
     fetchProduct();
-    // getToken();
+    getToken();
   }
 
   /// Fetch Product data from api
@@ -33,9 +33,9 @@ class HomeController extends GetxController {
     }
   }
 
-  // Future<String> getToken() async {
-  //   String? token = await FirebaseMessaging.instance.getToken();
-  //   debugPrint('FCM token: $token');
-  //   return token ?? '';
-  // }
+  Future<String> getToken() async {
+    String? token = await FirebaseMessaging.instance.getToken();
+    debugPrint('FCM token: $token');
+    return token ?? '';
+  }
 }
